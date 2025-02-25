@@ -10,6 +10,8 @@ function App() {
   return (
     <div>
       <h1>Swarmia Coding Exercise</h1>
+
+      <p>Weather data:</p>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )

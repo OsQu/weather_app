@@ -1,4 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import json
 import os
 
 import requests
@@ -53,7 +54,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-Type', 'application/json')
         self.end_headers()
-        self.wfile.write(str(weather_data).encode())
+        self.wfile.write(json.dumps(weather_data).encode())
 
     def handle_default(self):
         self.send_response(404)
